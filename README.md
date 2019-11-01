@@ -21,3 +21,18 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 ## Permissions Needed
 
 - Event subscriptions (enable events)
+  - app_mention
+- Add bot user
+- Add bot to workspace
+
+#### What will alert-helper be able to view?
+
+- Content and info about you
+- Content and info about channels & conversations
+- Content and info about your workspace
+
+#### What will alert-helper be able to do?
+
+- Perform actions in channels & conversations
+- Perform actions in your workspace
+
