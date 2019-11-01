@@ -5,14 +5,14 @@ defmodule AlerthelperApiWeb.EventController do
   def index(conn, params) do
     case params do
       %{"challenge" => msg} -> json(conn, msg)
-      %{"event" => event} when event["type"] == "app_mention" -> handle_app_mention(conn, event)
+      %{"event" => %{"type" => "app_mention"}} -> handle_app_mention(conn)
       _ -> json(conn, %{hello: "world"})
     end
   end
 
-  defp handle_app_mention(conn, event) do
+  defp handle_app_mention(conn) do
     send_resp(conn, 200, "")
-    Logger.info("someone mentioned the app in channel: #{event["channel"]}")
+    Logger.info("someone mentioned the app")
 
     token = Application.get_env(:alerthelper_api, :token)
     headers = [
