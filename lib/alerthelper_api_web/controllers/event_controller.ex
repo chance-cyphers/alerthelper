@@ -5,7 +5,7 @@ defmodule AlerthelperApiWeb.EventController do
   def index(conn, params) do
     case params do
       %{"challenge" => msg} -> json(conn, msg)
-      %{"event" => %{"type" => "app_mention"} = event} -> handle_app_mention(conn, event)
+      %{"event" => event} when event["type"] == "app_mention" -> handle_app_mention(conn, event)
       _ -> json(conn, %{hello: "world"})
     end
   end
@@ -23,6 +23,7 @@ defmodule AlerthelperApiWeb.EventController do
 
     HTTPoison.start()
     HTTPoison.post("https://slack.com/api/chat.postMessage", request_body, headers)
+    Logger.info("posted a message to slack, maybe")
   end
 
 
