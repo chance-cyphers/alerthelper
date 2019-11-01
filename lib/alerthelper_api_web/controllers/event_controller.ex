@@ -24,6 +24,7 @@ defmodule AlerthelperApiWeb.EventController do
     HTTPoison.start()
     HTTPoison.post("https://slack.com/api/chat.postMessage", request_body, headers)
     Logger.info("posted a message to slack, maybe")
+    conn
   end
 
 
