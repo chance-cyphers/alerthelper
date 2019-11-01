@@ -20,6 +20,8 @@ defmodule AlerthelperApiWeb.EventController do
     ]
     request_body = "{\"channel\": \"#so-many-alerts\", \"text\": \"what is my purpose\"}"
 
+    Logger.info("here's a token: #{token}")
+
     HTTPoison.start()
     HTTPoison.post("https://slack.com/api/chat.postMessage", request_body, headers)
     Logger.info("posted a message to slack, maybe")
