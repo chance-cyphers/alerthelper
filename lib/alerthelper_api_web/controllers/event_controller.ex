@@ -11,7 +11,6 @@ defmodule AlerthelperApiWeb.EventController do
   end
 
   defp handle_app_mention(conn) do
-    send_resp(conn, 200, "")
     Logger.info("someone mentioned the app")
 
     token = Application.get_env(:alerthelper_api, :token)
@@ -24,7 +23,7 @@ defmodule AlerthelperApiWeb.EventController do
     HTTPoison.start()
     HTTPoison.post("https://slack.com/api/chat.postMessage", request_body, headers)
     Logger.info("posted a message to slack, maybe")
-    conn
+    send_resp(conn, 200, "")
   end
 
 
