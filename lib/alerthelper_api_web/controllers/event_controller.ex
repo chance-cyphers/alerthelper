@@ -12,7 +12,8 @@ defmodule AlerthelperApiWeb.EventController do
 
   defp handle_app_mention(conn, event) do
     send_resp(conn, 200, "")
-    Logger.info("someone mentioned the app: #{event}")
+    Logger.info("someone mentioned the app: #{event["type"]["channel"]}")
   end
+
 
 end
