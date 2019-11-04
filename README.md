@@ -22,8 +22,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 - Event subscriptions (enable events)
   - app_mention
-- Add bot user
-- Add bot to workspace
+- Scopes
+  - bot
+  - channels:history
+  - channels:read
 
 #### What will alert-helper be able to view?
 
@@ -35,4 +37,3 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 - Perform actions in channels & conversations
 - Perform actions in your workspace
-
