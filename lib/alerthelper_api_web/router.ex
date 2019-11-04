@@ -8,8 +8,6 @@ defmodule AlerthelperApiWeb.Router do
   scope "/api", AlerthelperApiWeb do
     pipe_through :api
 
-    get "/hello", HelloController, :index
-
     post "/event", EventController, :index
   end
 end
