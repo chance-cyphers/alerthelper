@@ -13,7 +13,7 @@ defmodule AlerthelperApiWeb.EventController do
   defp handle_app_mention(conn) do
     Logger.info("someone mentioned the app")
 
-    token = Application.get_env(:alerthelper_api, :token)
+    token = Application.get_env(:alerthelper_api, :bot_token)
     headers = [
       {"Content-Type", "application/json"},
       {"Authorization", "Bearer #{token}"}
