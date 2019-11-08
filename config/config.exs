@@ -12,7 +12,7 @@ config :alerthelper_api, AlerthelperApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "PTKP1lTEZmTbNQkDPuiS0J/lHLAT4nLHzr++NYvJEd9F4et16SmrfEApQImOa/9w",
   render_errors: [view: AlerthelperApiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: AlerthelperApi.PubSub, adapter: Phoenix.PubSub.PG2],
+  pubsub: [name: AlerthelperApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -9,5 +9,6 @@ defmodule AlerthelperApiWeb.Router do
     pipe_through :api
 
     post "/event", EventController, :index
+    post "/interaction", InteractionController, :index
   end
 end
